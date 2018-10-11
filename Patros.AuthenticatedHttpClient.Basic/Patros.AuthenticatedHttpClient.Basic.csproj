@@ -1,7 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+ <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Product>Patros.AuthenticatedHttpClient.Basic</Product>
+    <Authors>Patrick T Dwyer</Authors>
+    <Company></Company>
+    <Description>This package implements a HttpClient, BasicAuthenticatedHttpClient, with HTTP basic access authentication.</Description>
   </PropertyGroup>
 
 </Project>
