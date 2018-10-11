@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.Basic.Tests", "Patros.AuthenticatedHttpClient.Basic.Tests\Patros.AuthenticatedHttpClient.Basic.Tests.csproj", "{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAd", "Patros.AuthenticatedHttpClient.AzureAd\Patros.AuthenticatedHttpClient.AzureAd.csproj", "{C5BD6A46-454C-41E1-B8F2-8029DD206E60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}.Release|x64.Build.0 = Release|Any CPU
 		{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}.Release|x86.ActiveCfg = Release|Any CPU
 		{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}.Release|x86.Build.0 = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|x64.Build.0 = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Debug|x86.Build.0 = Debug|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|x64.ActiveCfg = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|x64.Build.0 = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|x86.ActiveCfg = Release|Any CPU
+		{C5BD6A46-454C-41E1-B8F2-8029DD206E60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
