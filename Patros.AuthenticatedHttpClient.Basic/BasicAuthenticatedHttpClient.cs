@@ -9,13 +9,15 @@ namespace Patros.AuthenticatedHttpClient
         public string Password { get; set; }
     }
 
-    public class BasicAuthenticatedHttpClient : HttpClient
+    public class BasicAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        public BasicAuthenticatedHttpClient(BasicAuthenticatedHttpClientOptions options)
+        private AuthenticationHeaderValue _authorizationHeader;
+
+        public BasicAuthenticatedHttpMessageHandler(BasicAuthenticatedHttpClientOptions options)
         {
-            this.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+            _authorizationHeader = new AuthenticationHeaderValue(
                 "Basic", 
-                BasicAuthenticatedHttpClient.GenerateAuthenticationParameter(options.UserId, options.Password));
+                BasicAuthenticatedHttpMessageHandler.GenerateAuthenticationParameter(options.UserId, options.Password));
         }
 
         internal static string GenerateAuthenticationParameter(string userId, string password)
@@ -25,6 +27,15 @@ namespace Patros.AuthenticatedHttpClient
             var userPassBytes = System.Text.Encoding.UTF8.GetBytes(userPass);
             var userPassBase64 = System.Convert.ToBase64String(userPassBytes);
             return userPassBase64;
+        }
+    }
+
+    public class BasicAuthenticatedHttpClient
+    {
+        public static HttpClient GetClient(BasicAuthenticatedHttpClientOptions options)
+        {
+            var msgHandler = new BasicAuthenticatedHttpMessageHandler(options);
+            return new HttpClient(msgHandler);
         }
     }
 }
