@@ -17,7 +17,7 @@ namespace Patros.AuthenticatedHttpClient
         /// The AAD Instance is the instance of Azure, for example public Azure or Azure China.
         /// </summary>
         /// <value></value>
-        public string AadInstance { get; set; }
+        public string AadInstance { get; set; } = "https://login.microsoftonline.com/{0}";
 
         /// <summary>
         /// The Tenant is the name of the Azure AD tenant in which this application is registered.
