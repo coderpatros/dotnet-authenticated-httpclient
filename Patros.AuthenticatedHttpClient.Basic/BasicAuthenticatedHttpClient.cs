@@ -40,7 +40,7 @@ namespace Patros.AuthenticatedHttpClient
         }
     }
 
-    public class BasicAuthenticatedHttpClient
+    public static class BasicAuthenticatedHttpClient
     {
         public static HttpClient GetClient(BasicAuthenticatedHttpClientOptions options)
         {

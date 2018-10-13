@@ -124,7 +124,7 @@ namespace Patros.AuthenticatedHttpClient
         }
     }
 
-    public class AzureAdAuthenticatedHttpClient
+    public static class AzureAdAuthenticatedHttpClient
     {
         public static HttpClient GetClient(AzureAdAuthenticatedHttpClientOptions options)
         {
