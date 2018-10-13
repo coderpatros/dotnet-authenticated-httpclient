@@ -1,4 +1,7 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Xunit;
 using Patros.AuthenticatedHttpClient;
 
@@ -22,6 +25,21 @@ namespace Patros.AuthenticatedHttpClient.Basic.Tests
             var parameter = BasicAuthenticatedHttpMessageHandler.GenerateAuthenticationParameter("Aladdin", "open sesame");
 
             Assert.Equal("QWxhZGRpbjpvcGVuIHNlc2FtZQ==", parameter);
+        }
+
+        [Fact]
+        public async Task TestRequestHasAuthorizationHeader()
+        {
+            var client = BasicAuthenticatedHttpClient.GetClient(new BasicAuthenticatedHttpClientOptions
+            {
+                UserId = "Aladdin",
+                Password = "open sesame"
+            });
+
+            var responseContent = await client.GetStringAsync("https://postman-echo.com/get");
+            dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+            Assert.Equal("Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==", (string)responseObject.headers.authorization);
         }
     }
 }

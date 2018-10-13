@@ -8,4 +8,8 @@
     <Description>This package implements a HttpClient, BasicAuthenticatedHttpClient, with HTTP basic access authentication.</Description>
   </PropertyGroup>
 
+ <ItemGroup>
+   <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+ </ItemGroup>
+
 </Project>
