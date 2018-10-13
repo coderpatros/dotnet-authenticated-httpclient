@@ -27,6 +27,24 @@ var client = AzureAdAuthenticatedHttpClient.GetClient(options);
 var content = await client.GetStringAsync();
 ```
 
+Azure App Service Managed Identity Authenticated Http Client Example Usage
+--------------------------------------------------------------------------
+
+```csharp
+using Patros.AuthenticatedHttpClient;
+
+...
+
+var options = new AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions
+{
+    ResourceId = "APPLICATION ID OF THE SERVICE YOU ARE AUTHENTICATING TO (GUID)"
+};
+
+var client = AzureAppServiceManagedIdentityAuthenticatedHttpClient.GetClient(options);
+
+var content = await client.GetStringAsync();
+```
+
 Basic Authenticated Http Client Example Usage
 ---------------------------------------------
 
