@@ -17,6 +17,8 @@ namespace Patros.AuthenticatedHttpClient
 
         public BasicAuthenticatedHttpMessageHandler(BasicAuthenticatedHttpClientOptions options)
         {
+            InnerHandler = new HttpClientHandler();
+            
             _authorizationHeader = new AuthenticationHeaderValue(
                 "Basic", 
                 BasicAuthenticatedHttpMessageHandler.GenerateAuthenticationParameter(options.UserId, options.Password));

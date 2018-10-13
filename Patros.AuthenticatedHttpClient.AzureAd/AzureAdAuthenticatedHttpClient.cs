@@ -52,6 +52,8 @@ namespace Patros.AuthenticatedHttpClient
 
         public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options)
         {
+            InnerHandler = new HttpClientHandler();
+            
             _resourceId = options.ResourceId;
 
             var authority = String.Format(CultureInfo.InvariantCulture, options.AadInstance, options.Tenant);
