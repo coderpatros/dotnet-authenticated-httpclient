@@ -4,6 +4,9 @@ Patros.AuthenticatedHttpClient
 A collection of helpers to create HttpClient instances that automatically
 handle authentication for you.
 
+They all return HttpClient instances so your favourite extension methods will
+work too.
+
 Azure AD Authenticated Http Client Example Usage
 ------------------------------------------------
 
