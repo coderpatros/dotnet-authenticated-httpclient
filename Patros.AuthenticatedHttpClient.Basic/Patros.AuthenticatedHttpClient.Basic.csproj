@@ -6,8 +6,10 @@
     <Authors>Patrick T Dwyer</Authors>
     <Company></Company>
     <Description>This package implements a HttpClient with HTTP basic access authentication.</Description>
-    <ProjectUrl>https://github.com/patros/AuthenticatedHttpClient</ProjectUrl>
-    <LicenseUrl>https://github.com/patros/AuthenticatedHttpClient/blob/master/LICENSE</LicenseUrl>
+    <PackageProjectUrl>https://github.com/patros/AuthenticatedHttpClient</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/patros/AuthenticatedHttpClient/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/patros/AuthenticatedHttpClient.git</RepositoryUrl>
   </PropertyGroup>
 
  <ItemGroup>
