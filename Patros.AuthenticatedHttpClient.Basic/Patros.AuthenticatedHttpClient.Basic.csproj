@@ -5,7 +5,9 @@
     <Product>Patros.AuthenticatedHttpClient.Basic</Product>
     <Authors>Patrick T Dwyer</Authors>
     <Company></Company>
-    <Description>This package implements a HttpClient, BasicAuthenticatedHttpClient, with HTTP basic access authentication.</Description>
+    <Description>This package implements a HttpClient with HTTP basic access authentication.</Description>
+    <ProjectUrl>https://github.com/patros/AuthenticatedHttpClient</ProjectUrl>
+    <LicenseUrl>https://github.com/patros/AuthenticatedHttpClient/blob/master/LICENSE</LicenseUrl>
   </PropertyGroup>
 
  <ItemGroup>

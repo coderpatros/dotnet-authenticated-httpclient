@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+ <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Product>Patros.AuthenticatedHttpClient.AzureAd</Product>
+    <Authors>Patrick T Dwyer</Authors>
+    <Company></Company>
+    <Description>This package implements a HttpClient with Azure AD authentication.</Description>
+    <ProjectUrl>https://github.com/patros/AuthenticatedHttpClient</ProjectUrl>
+    <LicenseUrl>https://github.com/patros/AuthenticatedHttpClient/blob/master/LICENSE</LicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
