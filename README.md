@@ -1,5 +1,5 @@
-Patros.AuthenticatedHttpClient
-==============================
+Authenticated HttpClient
+========================
 
 A collection of helpers to create HttpClient instances that automatically
 handle authentication for you.
@@ -32,7 +32,7 @@ var options = new AzureAdAuthenticatedHttpClientOptions
 
 var client = AzureAdAuthenticatedHttpClient.GetClient(options);
 
-var content = await client.GetStringAsync();
+var content = await client.GetStringAsync("http://www.example.com");
 ```
 
 Azure App Service Managed Identity Authenticated Http Client Example Usage
@@ -50,7 +50,7 @@ var options = new AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions
 
 var client = AzureAppServiceManagedIdentityAuthenticatedHttpClient.GetClient(options);
 
-var content = await client.GetStringAsync();
+var content = await client.GetStringAsync("http://www.example.com");
 ```
 
 Basic Authenticated Http Client Example Usage
@@ -69,5 +69,5 @@ var options = new BasicAuthenticatedHttpClientOptions
 
 var client = BasicAuthenticatedHttpClient.GetClient(options);
 
-var content = await client.GetStringAsync();
+var content = await client.GetStringAsync("http://www.example.com");
 ```
