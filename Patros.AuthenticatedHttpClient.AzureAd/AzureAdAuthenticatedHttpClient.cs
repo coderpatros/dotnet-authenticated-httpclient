@@ -50,9 +50,9 @@ namespace Patros.AuthenticatedHttpClient
         private AuthenticationContext _authContext;
         private ClientCredential _clientCredential;
 
-        public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options)
+        public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            InnerHandler = new HttpClientHandler();
+            InnerHandler = innerHandler ?? new HttpClientHandler();
             
             _resourceId = options.ResourceId;
 
@@ -62,13 +62,19 @@ namespace Patros.AuthenticatedHttpClient
             _clientCredential = new ClientCredential(options.ClientId, options.AppKey);
         }
 
-        private async Task<string> AcquireToken(CancellationToken cancellationToken)
+        internal virtual async Task<string> AcquireAccessTokenAsync()
+        {
+            var result = await _authContext.AcquireTokenAsync(_resourceId, _clientCredential);
+            return result?.AccessToken;
+        }
+
+        private async Task<string> AcquireTokenWithRetriesAsync(CancellationToken cancellationToken)
         {
             //
             // Get an access token from Azure AD using client credentials.
             // If the attempt to get a token fails because the server is unavailable, retry twice after 3 seconds each.
             //
-            AuthenticationResult result = null;
+            string token = null;
             int retryCount = 0;
             bool retry = false;
 
@@ -78,7 +84,7 @@ namespace Patros.AuthenticatedHttpClient
                 try
                 {
                     // ADAL includes an in memory cache, so this call will only send a message to the server if the cached token is expired.
-                    result = await _authContext.AcquireTokenAsync(_resourceId, _clientCredential);
+                    token = await AcquireAccessTokenAsync();
                 }
                 catch (AdalException ex)
                 {
@@ -98,19 +104,12 @@ namespace Patros.AuthenticatedHttpClient
 
             } while ((retry == true) && (retryCount < 3) && !cancellationToken.IsCancellationRequested);
 
-            if (result == null)
-            {
-                return null;
-            }
-            else
-            {
-                return result.AccessToken;
-            }
+            return token;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var accessToken = await AcquireToken(cancellationToken);
+            var accessToken = await AcquireTokenWithRetriesAsync(cancellationToken);
             if (cancellationToken.IsCancellationRequested)
             {
                 return null;
@@ -126,9 +125,9 @@ namespace Patros.AuthenticatedHttpClient
 
     public static class AzureAdAuthenticatedHttpClient
     {
-        public static HttpClient GetClient(AzureAdAuthenticatedHttpClientOptions options)
+        public static HttpClient GetClient(AzureAdAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            var msgHandler = new AzureAdAuthenticatedHttpMessageHandler(options);
+            var msgHandler = new AzureAdAuthenticatedHttpMessageHandler(options, innerHandler);
             return new HttpClient(msgHandler);
         }
     }
