@@ -1,4 +1,4 @@
-Authenticated HttpClient
+Authenticated HttpClient [![Build status](https://dev.azure.com/patros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/patros/OpenSource/_build/latest?definitionId=15)
 ========================
 
 A collection of helpers to create HttpClient instances that automatically
