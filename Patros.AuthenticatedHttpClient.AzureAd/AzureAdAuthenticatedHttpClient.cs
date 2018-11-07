@@ -89,11 +89,11 @@ namespace Patros.AuthenticatedHttpClient
                         Thread.Sleep(3000);
                     }
 
-                    Console.WriteLine(
-                        String.Format("An error occurred while acquiring a token\nTime: {0}\nError: {1}\nRetry: {2}\n",
-                        DateTime.Now.ToString(),
-                        ex.ToString(),
-                        retry.ToString()));
+                    // Console.WriteLine(
+                    //     String.Format("An error occurred while acquiring a token\nTime: {0}\nError: {1}\nRetry: {2}\n",
+                    //     DateTime.Now.ToString(),
+                    //     ex.ToString(),
+                    //     retry.ToString()));
                 }
 
             } while ((retry == true) && (retryCount < 3) && !cancellationToken.IsCancellationRequested);
