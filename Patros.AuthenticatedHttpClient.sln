@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests", "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests\Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests.csproj", "{FE52A958-E16F-42B4-A648-FB8B7A2219B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.QueryStringParameter", "Patros.AuthenticatedHttpClient.QueryStringParameter\Patros.AuthenticatedHttpClient.QueryStringParameter.csproj", "{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.QueryStringParameter.Tests", "Patros.AuthenticatedHttpClient.QueryStringParameter.Tests\Patros.AuthenticatedHttpClient.QueryStringParameter.Tests.csproj", "{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,5 +104,29 @@ Global
 		{FE52A958-E16F-42B4-A648-FB8B7A2219B7}.Release|x64.Build.0 = Release|Any CPU
 		{FE52A958-E16F-42B4-A648-FB8B7A2219B7}.Release|x86.ActiveCfg = Release|Any CPU
 		{FE52A958-E16F-42B4-A648-FB8B7A2219B7}.Release|x86.Build.0 = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|x64.Build.0 = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}.Release|x86.Build.0 = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|x64.Build.0 = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|x64.ActiveCfg = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|x64.Build.0 = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
