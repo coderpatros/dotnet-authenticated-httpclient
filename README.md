@@ -7,9 +7,11 @@ handle authentication for you.
 They all return HttpClient instances so your favourite extension methods will
 work too.
 
+[![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AuthorizationHeader.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AuthorizationHeader/) `Patros.AuthenticatedHttpClient.AuthorizationHeader`  
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAd.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAd/) `Patros.AuthenticatedHttpClient.AzureAd`  
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity/) `Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity`  
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.Basic/) `Patros.AuthenticatedHttpClient.Basic`  
+[![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.CustomHeader.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.CustomHeader/) `Patros.AuthenticatedHttpClient.CustomHeader`  
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.QueryStringParameter.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.QueryStringParameter/) `Patros.AuthenticatedHttpClient.QueryStringParameter`  
 
 Authorization Header Authenticated Http Client Example Usage
