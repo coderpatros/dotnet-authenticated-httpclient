@@ -199,3 +199,46 @@ var client = QueryStringParameterAuthenticatedHttpClient.GetClient(options);
 
 var content = await client.GetStringAsync("http://www.example.com");
 ```
+
+Chaining Multiple Authentication Methods
+----------------------------------------
+
+Let's just pretend that you need to interact with an API that requires
+multiple authentication methods. Just for an example, let's pretend it
+requires basic authentication, a query string parameter and a custom HTTP
+header. I know, that would never happen in the real world... oh wait... there's the [Whispir API](https://whispir.github.io/api/).
+
+```
+dotnet add package Patros.AuthenticatedHttpClient.Basic
+dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
+dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
+```
+
+```csharp
+using Patros.AuthenticatedHttpClient;
+
+...
+
+var basicOptions = new BasicAuthenticatedHttpClientOptions
+{
+    UserId = "WhispirUsername",
+    Password = "WhispirPassword"
+};
+var basicClient = BasicAuthenticatedHttpClient.GetClient(basicOptions);
+
+var customHeaderOptions = new CustomHeaderAuthenticatedHttpClientOptions
+{
+    Name = "x-api-key",
+    Value = "WhispirApiKey"
+};
+var customHeaderClient = CustomHeaderAuthenticatedHttpClient.GetClient(customHeaderOptions, basicClient);
+
+var queryStringOptions = new QueryStringParameterAuthenticatedHttpClientOptions
+{
+    Name = "apikey",
+    Value = "WhispirApiKey" // yes, the same one as above :|
+};
+var client = QueryStringParameterAuthenticatedHttpClient.GetClient(queryStringOptions, customHeaderClient);
+
+var content = await client.GetStringAsync("https://api.<region>.whispir.com/messages");
+```
