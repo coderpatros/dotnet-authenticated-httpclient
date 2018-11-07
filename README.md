@@ -8,9 +8,9 @@ They all return HttpClient instances so your favourite extension methods will
 work too.
 
 Current versions  
-`Patros.AuthenticatedHttpClient.AzureAd` [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAd.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAd/)  
-`Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity` [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity/)  
-`Patros.AuthenticatedHttpClient.Basic` [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.Basic/)
+[![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAd.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAd/) `Patros.AuthenticatedHttpClient.AzureAd`  
+[![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity/) `Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity`  
+[![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.Basic/) `Patros.AuthenticatedHttpClient.Basic`
 
 Azure AD Authenticated Http Client Example Usage
 ------------------------------------------------
