@@ -20,20 +20,21 @@ namespace Patros.AuthenticatedHttpClient
         private string _resourceId;
         private AzureServiceTokenProvider _azureServiceTokenProvider = new AzureServiceTokenProvider();
 
-        public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options)
+        public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            InnerHandler = new HttpClientHandler();
+            InnerHandler = innerHandler ?? new HttpClientHandler();
 
             _resourceId = options.ResourceId;
         }
 
+        internal virtual async Task<string> GetAccessTokenAsync()
+        {
+            return await _azureServiceTokenProvider.GetAccessTokenAsync(_resourceId);
+        }
+
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var accessToken = await _azureServiceTokenProvider.GetAccessTokenAsync(_resourceId);
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return null;
-            }
+            var accessToken = await GetAccessTokenAsync();
 
             request.Headers.Authorization = new AuthenticationHeaderValue(
                 "Bearer",
@@ -45,9 +46,9 @@ namespace Patros.AuthenticatedHttpClient
 
     public class AzureAppServiceManagedIdentityAuthenticatedHttpClient
     {
-       public static HttpClient GetClient(AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options)
+       public static HttpClient GetClient(AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            var msgHandler = new AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(options);
+            var msgHandler = new AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(options, innerHandler);
             return new HttpClient(msgHandler);
         }
      }
