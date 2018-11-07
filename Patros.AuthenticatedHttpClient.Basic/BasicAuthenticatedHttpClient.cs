@@ -15,9 +15,9 @@ namespace Patros.AuthenticatedHttpClient
     {
         private AuthenticationHeaderValue _authorizationHeader;
 
-        public BasicAuthenticatedHttpMessageHandler(BasicAuthenticatedHttpClientOptions options)
+        public BasicAuthenticatedHttpMessageHandler(BasicAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            InnerHandler = new HttpClientHandler();
+            InnerHandler = innerHandler ?? new HttpClientHandler();
             
             _authorizationHeader = new AuthenticationHeaderValue(
                 "Basic", 
@@ -42,9 +42,9 @@ namespace Patros.AuthenticatedHttpClient
 
     public static class BasicAuthenticatedHttpClient
     {
-        public static HttpClient GetClient(BasicAuthenticatedHttpClientOptions options)
+        public static HttpClient GetClient(BasicAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
-            var msgHandler = new BasicAuthenticatedHttpMessageHandler(options);
+            var msgHandler = new BasicAuthenticatedHttpMessageHandler(options, innerHandler);
             return new HttpClient(msgHandler);
         }
     }

@@ -1,8 +1,10 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xunit;
+using RichardSzalay.MockHttp;
 using Patros.AuthenticatedHttpClient;
 
 namespace Patros.AuthenticatedHttpClient.Basic.Tests
@@ -30,16 +32,20 @@ namespace Patros.AuthenticatedHttpClient.Basic.Tests
         [Fact]
         public async Task TestRequestHasAuthorizationHeader()
         {
+            var mockHttp = new MockHttpMessageHandler();
+            mockHttp
+                .Expect("http://www.example.com")
+                .WithHeaders("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
+                .Respond(HttpStatusCode.OK);
             var client = BasicAuthenticatedHttpClient.GetClient(new BasicAuthenticatedHttpClientOptions
             {
                 UserId = "Aladdin",
                 Password = "open sesame"
-            });
+            }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("https://postman-echo.com/get");
-            dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(responseContent);
+            var responseContent = await client.GetStringAsync("http://www.example.com");
 
-            Assert.Equal("Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==", (string)responseObject.headers.authorization);
+            mockHttp.VerifyNoOutstandingExpectation();
         }
     }
 }
