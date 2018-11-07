@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Product>Patros.AuthenticatedHttpClient.AuthorizationHeader</Product>
+    <Authors>Patrick T Dwyer</Authors>
+    <Company></Company>
+    <Description>This package implements a HttpClient with authorization header authentication.</Description>
+    <PackageProjectUrl>https://github.com/patros/AuthenticatedHttpClient</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/patros/AuthenticatedHttpClient/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/patros/AuthenticatedHttpClient.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
