@@ -14,6 +14,10 @@ work too.
 Azure AD Authenticated Http Client Example Usage
 ------------------------------------------------
 
+```
+dotnet add package Patros.AuthenticatedHttpClient.AzureAd
+```
+
 ```csharp
 using Patros.AuthenticatedHttpClient;
 
@@ -37,6 +41,10 @@ var content = await client.GetStringAsync("http://www.example.com");
 Azure App Service Managed Identity Authenticated Http Client Example Usage
 --------------------------------------------------------------------------
 
+```
+dotnet add package Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity
+```
+
 ```csharp
 using Patros.AuthenticatedHttpClient;
 
@@ -54,6 +62,10 @@ var content = await client.GetStringAsync("http://www.example.com");
 
 Basic Authenticated Http Client Example Usage
 ---------------------------------------------
+
+```
+dotnet add package Patros.AuthenticatedHttpClient.Basic
+```
 
 ```csharp
 using Patros.AuthenticatedHttpClient;
