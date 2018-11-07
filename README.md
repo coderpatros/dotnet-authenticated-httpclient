@@ -12,6 +12,28 @@ work too.
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.Basic/) `Patros.AuthenticatedHttpClient.Basic`  
 [![NuGet](http://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.QueryStringParameter.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.QueryStringParameter/) `Patros.AuthenticatedHttpClient.QueryStringParameter`  
 
+Authorization Header Authenticated Http Client Example Usage
+------------------------------------------------------------
+
+```
+dotnet add package Patros.AuthenticatedHttpClient.AuthorizationHeader
+```
+
+```csharp
+using Patros.AuthenticatedHttpClient;
+
+...
+
+var options = new AuthorizationHeaderAuthenticatedHttpClientOptions
+{
+    Value = "INSERT YOUR AUTHORIZATION HEADER HERE"
+};
+
+var client = AuthorizationHeaderAuthenticatedHttpClient.GetClient(options);
+
+var content = await client.GetStringAsync("http://www.example.com");
+```
+
 Azure AD Authenticated Http Client Example Usage
 ------------------------------------------------
 
@@ -80,6 +102,52 @@ var options = new BasicAuthenticatedHttpClientOptions
 };
 
 var client = BasicAuthenticatedHttpClient.GetClient(options);
+
+var content = await client.GetStringAsync("http://www.example.com");
+```
+
+Custom Header Authenticated Http Client Example Usage
+-----------------------------------------------------
+
+```
+dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
+```
+
+```csharp
+using Patros.AuthenticatedHttpClient;
+
+...
+
+var options = new CustomHeaderAuthenticatedHttpClientOptions
+{
+    Name = "INSERT NAME OF CUSTOM HEADER",
+    Value = "INSERT VALUE OF CUSTOM HEADER"
+};
+
+var client = CustomHeaderAuthenticatedHttpClient.GetClient(options);
+
+var content = await client.GetStringAsync("http://www.example.com");
+```
+
+Or if multiple custom headers are required...
+
+```csharp
+using Patros.AuthenticatedHttpClient;
+
+...
+
+var options = new MultipleCustomHeaderAuthenticatedHttpClientOptions
+{
+    Parameters = new Dictionary<string, string>
+    {
+        { "NAME OF 1ST HEADER", "VALUE OF 1ST HEADER" },
+        { "NAME OF 2ND HEADER", "VALUE OF 2ND HEADER" },
+...
+        { "NAME OF NTH HEADER", "VALUE OF NTH HEADER" }
+    }
+};
+
+var client = CustomHeaderAuthenticatedHttpClient.GetClient(options);
 
 var content = await client.GetStringAsync("http://www.example.com");
 ```
