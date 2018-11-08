@@ -242,3 +242,5 @@ var client = QueryStringParameterAuthenticatedHttpClient.GetClient(queryStringOp
 
 var content = await client.GetStringAsync("https://api.<region>.whispir.com/messages");
 ```
+
+To make the above simpler I made a `WhispirApiHttpClient` class that is available in my [dotnet-whispir-api](https://github.com/patros/dotnet-whispir-api) project.
