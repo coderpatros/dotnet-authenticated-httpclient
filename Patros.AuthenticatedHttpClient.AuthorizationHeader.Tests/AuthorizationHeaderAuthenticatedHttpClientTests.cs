@@ -17,7 +17,7 @@ namespace Patros.AuthenticatedHttpClient.AuthorizationHeader.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders("Authorization", "test-value")
                 .Respond(HttpStatusCode.OK);
             var client = AuthorizationHeaderAuthenticatedHttpClient.GetClient(new AuthorizationHeaderAuthenticatedHttpClientOptions
@@ -25,7 +25,7 @@ namespace Patros.AuthenticatedHttpClient.AuthorizationHeader.Tests
                 Value = "test-value"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }

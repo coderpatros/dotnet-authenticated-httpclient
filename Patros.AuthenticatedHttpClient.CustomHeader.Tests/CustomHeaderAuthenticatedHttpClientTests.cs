@@ -17,7 +17,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders("test-name", "test-value")
                 .Respond(HttpStatusCode.OK);
             var client = CustomHeaderAuthenticatedHttpClient.GetClient(new CustomHeaderAuthenticatedHttpClientOptions
@@ -26,7 +26,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
                 Value = "test-value"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
@@ -36,7 +36,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders(new Dictionary<string, string> {
                     { "test-name-1", "test-value-1" },
                     { "test-name-2", "test-value-2" }
@@ -51,7 +51,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
                 }
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
@@ -61,7 +61,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders(new Dictionary<string, string> {
                     { "test-name-1", "test-value-1" }
                 })
@@ -74,7 +74,7 @@ namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
                 }
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }

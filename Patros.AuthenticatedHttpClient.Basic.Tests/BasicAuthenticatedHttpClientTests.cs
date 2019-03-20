@@ -34,7 +34,7 @@ namespace Patros.AuthenticatedHttpClient.Basic.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
                 .Respond(HttpStatusCode.OK);
             var client = BasicAuthenticatedHttpClient.GetClient(new BasicAuthenticatedHttpClientOptions
@@ -43,7 +43,7 @@ namespace Patros.AuthenticatedHttpClient.Basic.Tests
                 Password = "open sesame"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }

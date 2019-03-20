@@ -20,7 +20,7 @@ namespace Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests
         {
             var mockHttp = new MockHttpMessageHandler();
             mockHttp
-                .Expect("http://www.example.com")
+                .Expect("https://www.example.com")
                 .WithHeaders("Authorization", "Bearer test-access-token")
                 .Respond(HttpStatusCode.OK);
             var mockMsgHandler = new Mock<AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler>(new AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions
@@ -33,7 +33,7 @@ namespace Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests
             mockMsgHandler.CallBase = true;
             var client = new HttpClient(mockMsgHandler.Object);
 
-            var responseContent = await client.GetStringAsync("http://www.example.com");
+            var responseContent = await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
