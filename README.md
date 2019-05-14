@@ -1,4 +1,9 @@
-Authenticated HttpClient [![Build status](https://dev.azure.com/patros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/patros/OpenSource/_build/latest?definitionId=15)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://dev.azure.com/patros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/patros/OpenSource/_build/latest?definitionId=15&branchName=master)
+![Azure DevOps tests](https://img.shields.io/azure-devops/tests/patros/OpenSource/15.svg)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/patros/OpenSource/15.svg)
+
+Authenticated HttpClient
 ========================
 
 A collection of helpers to create HttpClient instances that automatically
