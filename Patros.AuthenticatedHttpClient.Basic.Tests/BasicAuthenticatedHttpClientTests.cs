@@ -1,11 +1,8 @@
 using System;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Xunit;
 using RichardSzalay.MockHttp;
-using Patros.AuthenticatedHttpClient;
 
 namespace Patros.AuthenticatedHttpClient.Basic.Tests
 {
