@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.Services.AppAuthentication;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Patros.AuthenticatedHttpClient
 {
@@ -27,6 +28,7 @@ namespace Patros.AuthenticatedHttpClient
             _resourceId = options.ResourceId;
         }
 
+        [ExcludeFromCodeCoverage]
         internal virtual async Task<string> GetAccessTokenAsync()
         {
             return await _azureServiceTokenProvider.GetAccessTokenAsync(_resourceId);
