@@ -12,8 +12,4 @@
     <RepositoryUrl>https://github.com/patros/dotnet-authenticated-httpclient.git</RepositoryUrl>
   </PropertyGroup>
 
- <ItemGroup>
-   <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
- </ItemGroup>
-
 </Project>
