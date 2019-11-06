@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://dev.azure.com/patros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/patros/OpenSource/_build/latest?definitionId=15&branchName=master)
-![Azure DevOps tests](https://img.shields.io/azure-devops/tests/patros/OpenSource/15.svg)
-![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/patros/OpenSource/15.svg)
+[![Build Status](https://dev.azure.com/coderpatros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/coderpatros/OpenSource/_build/latest?definitionId=15&branchName=master)
+![Azure DevOps tests](https://img.shields.io/azure-devops/tests/coderpatros/OpenSource/15.svg)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/coderpatros/OpenSource/15.svg)
 
 Authenticated HttpClient
 ========================
@@ -260,4 +260,4 @@ var client = QueryStringParameterAuthenticatedHttpClient.GetClient(queryStringOp
 var content = await client.GetStringAsync("https://api.<region>.whispir.com/messages");
 ```
 
-To make the above simpler I made a `WhispirApiHttpClient` class that is available in my [dotnet-whispir-api](https://github.com/patros/dotnet-whispir-api) project.
+To make the above simpler I made a `WhispirApiHttpClient` class that is available in my [dotnet-whispir-api](https://github.com/coderpatros/dotnet-whispir-api) project.
