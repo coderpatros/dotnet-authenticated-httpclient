@@ -2,6 +2,7 @@
 [![Build Status](https://dev.azure.com/coderpatros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/coderpatros/OpenSource/_build/latest?definitionId=15&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/coderpatros/OpenSource/15.svg)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/coderpatros/OpenSource/15.svg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient?ref=badge_shield)
 
 Authenticated HttpClient
 ========================
@@ -261,3 +262,7 @@ var content = await client.GetStringAsync("https://api.<region>.whispir.com/mess
 ```
 
 To make the above simpler I made a `WhispirApiHttpClient` class that is available in my [dotnet-whispir-api](https://github.com/coderpatros/dotnet-whispir-api) project.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient?ref=badge_large)
