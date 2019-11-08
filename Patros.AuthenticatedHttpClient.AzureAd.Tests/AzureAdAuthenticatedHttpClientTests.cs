@@ -74,7 +74,7 @@ namespace Patros.AuthenticatedHttpClient.AzureAd.Tests
         public async Task TestRequestFailsOnRepeatedFailuresToAcquireAccessTokenFailure()
         {
             var mockHttp = new MockHttpMessageHandler();
-            mockHttp.Fallback.Respond(new HttpResponseMessage(HttpStatusCode.Unauthorized));
+            mockHttp.Fallback.Respond(req => new HttpResponseMessage(HttpStatusCode.Unauthorized));
             var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
             {
                 Tenant = "test-tenant",
