@@ -6,11 +6,16 @@ namespace Patros.AuthenticatedHttpClient
 {
     public class CustomHeaderAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        private CustomHeaderAuthenticatedHttpClientOptions _options;
+        private readonly CustomHeaderAuthenticatedHttpClientOptions _options;
 
-        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options)
         {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
+            _options = options;
+        }
+
+        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
+        {
+            InnerHandler = innerHandler;
             
             _options = options;
         }

@@ -3,6 +3,6 @@
 namespace Patros.AuthenticatedHttpClient
 {
     public class MultipleCustomHeaderAuthenticatedHttpClientOptions {
-        public Dictionary<string, string> Headers;
+        public Dictionary<string, string> Headers { get; set; }
     }
 }

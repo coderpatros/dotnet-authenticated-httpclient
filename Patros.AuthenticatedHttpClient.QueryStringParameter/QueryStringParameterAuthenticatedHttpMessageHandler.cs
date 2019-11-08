@@ -8,13 +8,16 @@ namespace Patros.AuthenticatedHttpClient
 {
     public class QueryStringParameterAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        private QueryStringParameterAuthenticatedHttpClientOptions _options;
+        private readonly QueryStringParameterAuthenticatedHttpClientOptions _options;
 
-        public QueryStringParameterAuthenticatedHttpMessageHandler(QueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public QueryStringParameterAuthenticatedHttpMessageHandler(QueryStringParameterAuthenticatedHttpClientOptions options)
         {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
-            
             _options = options;
+        }
+
+        public QueryStringParameterAuthenticatedHttpMessageHandler(QueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler) : this(options)
+        {
+            InnerHandler = innerHandler;            
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
