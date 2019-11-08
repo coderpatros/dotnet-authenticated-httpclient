@@ -1,39 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Patros.AuthenticatedHttpClient
 {
-    public class CustomHeaderAuthenticatedHttpClientOptions {
-        public string Name { get; set; }
-        public string Value { get; set; }
-    }
-
-    public class MultipleCustomHeaderAuthenticatedHttpClientOptions {
-        public Dictionary<string, string> Headers;
-    }
-
-    public class CustomHeaderAuthenticatedHttpMessageHandler : DelegatingHandler
-    {
-        private CustomHeaderAuthenticatedHttpClientOptions _options;
-
-        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
-        {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
-            
-            _options = options;
-        }
-
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-        {
-            request.Headers.Remove(_options.Name);
-            request.Headers.Add(_options.Name, _options.Value);
-            return await base.SendAsync(request, cancellationToken);
-        }
-    }
-
     public static class CustomHeaderAuthenticatedHttpClient
     {
         public static HttpClient GetClient(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
