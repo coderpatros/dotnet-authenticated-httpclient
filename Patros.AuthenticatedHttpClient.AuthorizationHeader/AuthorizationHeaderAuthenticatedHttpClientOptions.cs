@@ -2,6 +2,6 @@
 {
     public class AuthorizationHeaderAuthenticatedHttpClientOptions
     {
-        public string Value;
+        public string Value { get; set; }
     }
 }

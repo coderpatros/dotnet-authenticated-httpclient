@@ -3,6 +3,6 @@
 namespace Patros.AuthenticatedHttpClient
 {
     public class MultipleQueryStringParameterAuthenticatedHttpClientOptions {
-        public Dictionary<string, string> Parameters;
+        public Dictionary<string, string> Parameters { get; set; }
     }
 }
