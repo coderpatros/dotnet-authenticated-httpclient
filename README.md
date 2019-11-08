@@ -1,7 +1,10 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://dev.azure.com/coderpatros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/coderpatros/OpenSource/_build/latest?definitionId=15&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/coderpatros/OpenSource/15.svg)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/coderpatros/OpenSource/15.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/coderpatros/dotnet-authenticated-httpclient/badge)](https://www.codefactor.io/repository/github/coderpatros/dotnet-authenticated-httpclient)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/152d264f1e2f490c898b7dde0a5c7956)](https://www.codacy.com/manual/coderpatros/dotnet-authenticated-httpclient?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=coderpatros/dotnet-authenticated-httpclient&amp;utm_campaign=Badge_Grade)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcoderpatros%2Fdotnet-authenticated-httpclient?ref=badge_shield)
 
 Authenticated HttpClient
 ========================
