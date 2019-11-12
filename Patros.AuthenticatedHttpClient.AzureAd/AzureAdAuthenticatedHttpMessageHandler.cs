@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Globalization;
@@ -14,7 +14,7 @@ namespace Patros.AuthenticatedHttpClient
     {
         private string _resourceId;
         private AuthenticationContext _authContext;
-        private ClientCredential _clientCredential;
+        private readonly ClientCredential _clientCredential;
 
         public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {

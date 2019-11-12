@@ -40,7 +40,7 @@ namespace Patros.AuthenticatedHttpClient.Basic.Tests
                 Password = "open sesame"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("https://www.example.com");
+            await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
