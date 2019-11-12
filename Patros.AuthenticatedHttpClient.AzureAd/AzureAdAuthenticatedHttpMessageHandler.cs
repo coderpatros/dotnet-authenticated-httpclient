@@ -12,20 +12,25 @@ namespace Patros.AuthenticatedHttpClient
     // https://github.com/Azure-Samples/active-directory-dotnet-daemon/blob/master/TodoListDaemon/Program.cs
     public class AzureAdAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        private string _resourceId;
-        private AuthenticationContext _authContext;
+        private readonly string _resourceId;
+        private readonly AuthenticationContext _authContext;
         private readonly ClientCredential _clientCredential;
 
-        public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options)
         {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
-            
             _resourceId = options.ResourceId;
 
             var authority = String.Format(CultureInfo.InvariantCulture, options.AadInstance, options.Tenant);
             _authContext = new AuthenticationContext(authority);
 
             _clientCredential = new ClientCredential(options.ClientId, options.AppKey);
+        }
+
+        public AzureAdAuthenticatedHttpMessageHandler(
+            AzureAdAuthenticatedHttpClientOptions options, 
+            HttpMessageHandler innerHandler) : this(options)
+        {
+            InnerHandler = innerHandler;
         }
 
         internal virtual async Task<string> AcquireAccessTokenAsync()

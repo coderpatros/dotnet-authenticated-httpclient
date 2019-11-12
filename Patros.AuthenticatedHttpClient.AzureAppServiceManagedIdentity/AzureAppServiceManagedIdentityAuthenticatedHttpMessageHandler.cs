@@ -9,14 +9,20 @@ namespace Patros.AuthenticatedHttpClient
 {
     public class AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        private string _resourceId;
-        private AzureServiceTokenProvider _azureServiceTokenProvider = new AzureServiceTokenProvider();
+        private readonly string _resourceId;
+        private readonly AzureServiceTokenProvider _azureServiceTokenProvider = new AzureServiceTokenProvider();
 
-        public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(
+            AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options)
         {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
-
             _resourceId = options.ResourceId;
+        }
+
+        public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(
+            AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options, 
+            HttpMessageHandler innerHandler) : this(options)
+        {
+            InnerHandler = innerHandler;
         }
 
         [ExcludeFromCodeCoverage]
