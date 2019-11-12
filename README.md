@@ -37,7 +37,7 @@ work too.
 Authorization Header Authenticated Http Client Example Usage
 ------------------------------------------------------------
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.AuthorizationHeader
 ```
 
@@ -86,7 +86,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Azure App Service Managed Identity Authenticated Http Client Example Usage
 --------------------------------------------------------------------------
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity
 ```
 
@@ -108,7 +108,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Basic Authenticated Http Client Example Usage
 ---------------------------------------------
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.Basic
 ```
 
@@ -131,7 +131,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Custom Header Authenticated Http Client Example Usage
 -----------------------------------------------------
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
 ```
 
@@ -177,7 +177,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Query String Parameter Authenticated Http Client Example Usage
 --------------------------------------------------------------
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
 ```
 
@@ -228,7 +228,7 @@ multiple authentication methods. Just for an example, let's pretend it
 requires basic authentication, a query string parameter and a custom HTTP
 header. I know, that would never happen in the real world... oh wait... there's the [Whispir API](https://whispir.github.io/api/).
 
-```
+```shell
 dotnet add package Patros.AuthenticatedHttpClient.Basic
 dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
 dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter

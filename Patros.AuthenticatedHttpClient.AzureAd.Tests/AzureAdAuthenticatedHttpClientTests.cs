@@ -37,7 +37,7 @@ namespace Patros.AuthenticatedHttpClient.AzureAd.Tests
             mockMsgHandler.CallBase = true;
             var client = new HttpClient(mockMsgHandler.Object);
 
-            var responseContent = await client.GetStringAsync("https://www.example.com");
+            await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }

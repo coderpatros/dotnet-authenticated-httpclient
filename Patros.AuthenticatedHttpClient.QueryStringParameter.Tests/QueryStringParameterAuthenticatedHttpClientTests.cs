@@ -67,7 +67,7 @@ namespace Patros.AuthenticatedHttpClient.QueryStringParameter.Tests
                 Value = "test-value"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("https://www.example.com?test-name=incorrect-value");
+            await client.GetStringAsync("https://www.example.com?test-name=incorrect-value");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
@@ -89,7 +89,7 @@ namespace Patros.AuthenticatedHttpClient.QueryStringParameter.Tests
                 Value = "test-value"
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("https://www.example.com?other-name=other-value");
+            await client.GetStringAsync("https://www.example.com?other-name=other-value");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }
@@ -114,7 +114,7 @@ namespace Patros.AuthenticatedHttpClient.QueryStringParameter.Tests
                 }
             }, mockHttp);
 
-            var responseContent = await client.GetStringAsync("https://www.example.com");
+            await client.GetStringAsync("https://www.example.com");
 
             mockHttp.VerifyNoOutstandingExpectation();
         }

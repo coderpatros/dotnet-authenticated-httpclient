@@ -9,13 +9,24 @@ namespace Patros.AuthenticatedHttpClient
 {
     public static class QueryStringParameterAuthenticatedHttpClient
     {
-        public static HttpClient GetClient(QueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public static HttpClient GetClient(QueryStringParameterAuthenticatedHttpClientOptions options)
+        {
+            var msgHandler = new QueryStringParameterAuthenticatedHttpMessageHandler(options);
+            return new HttpClient(msgHandler);
+        }
+
+        public static HttpClient GetClient(QueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
         {
             var msgHandler = new QueryStringParameterAuthenticatedHttpMessageHandler(options, innerHandler);
             return new HttpClient(msgHandler);
         }
 
-        public static HttpClient GetClient(MultipleQueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public static HttpClient GetClient(MultipleQueryStringParameterAuthenticatedHttpClientOptions options)
+        {
+            return GetClient(options, null);
+        }
+
+        public static HttpClient GetClient(MultipleQueryStringParameterAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
         {
             if (options.Parameters.Count == 0) throw new ArgumentOutOfRangeException(nameof(options), "No parameters supplied.");
 

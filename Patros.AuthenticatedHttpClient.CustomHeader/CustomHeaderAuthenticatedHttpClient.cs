@@ -6,13 +6,24 @@ namespace Patros.AuthenticatedHttpClient
 {
     public static class CustomHeaderAuthenticatedHttpClient
     {
-        public static HttpClient GetClient(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public static HttpClient GetClient(CustomHeaderAuthenticatedHttpClientOptions options)
+        {
+            var msgHandler = new CustomHeaderAuthenticatedHttpMessageHandler(options);
+            return new HttpClient(msgHandler);
+        }
+
+        public static HttpClient GetClient(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
         {
             var msgHandler = new CustomHeaderAuthenticatedHttpMessageHandler(options, innerHandler);
             return new HttpClient(msgHandler);
         }
 
-        public static HttpClient GetClient(MultipleCustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public static HttpClient GetClient(MultipleCustomHeaderAuthenticatedHttpClientOptions options)
+        {
+            return GetClient(options, null);
+        }
+
+        public static HttpClient GetClient(MultipleCustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
         {
             if (options.Headers.Count == 0) throw new ArgumentOutOfRangeException(nameof(options), "No headers supplied.");
 

@@ -7,7 +7,7 @@ namespace Patros.AuthenticatedHttpClient
 {
     public class AuthorizationHeaderAuthenticatedHttpMessageHandler : DelegatingHandler
     {
-        private AuthenticationHeaderValue _authorizationHeader;
+        private readonly AuthenticationHeaderValue _authorizationHeader;
 
         public AuthorizationHeaderAuthenticatedHttpMessageHandler(AuthorizationHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
         {
