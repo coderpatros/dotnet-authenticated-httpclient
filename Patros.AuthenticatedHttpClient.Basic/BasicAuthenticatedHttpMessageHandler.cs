@@ -9,13 +9,19 @@ namespace Patros.AuthenticatedHttpClient
     {
         private readonly AuthenticationHeaderValue _authorizationHeader;
 
-        public BasicAuthenticatedHttpMessageHandler(BasicAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler = null)
+        public BasicAuthenticatedHttpMessageHandler(
+            BasicAuthenticatedHttpClientOptions options)
         {
-            InnerHandler = innerHandler ?? new HttpClientHandler();
-            
             _authorizationHeader = new AuthenticationHeaderValue(
                 "Basic", 
                 BasicAuthenticatedHttpMessageHandler.GenerateAuthenticationParameter(options.UserId, options.Password));
+        }
+
+        public BasicAuthenticatedHttpMessageHandler(
+            BasicAuthenticatedHttpClientOptions options,
+            HttpMessageHandler innerHandler) : this(options)
+        {
+            InnerHandler = innerHandler;
         }
 
         internal static string GenerateAuthenticationParameter(string userId, string password)

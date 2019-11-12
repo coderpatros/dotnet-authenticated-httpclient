@@ -8,19 +8,21 @@ namespace Patros.AuthenticatedHttpClient
     {
         private readonly CustomHeaderAuthenticatedHttpClientOptions _options;
 
-        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options)
+        public CustomHeaderAuthenticatedHttpMessageHandler(
+            CustomHeaderAuthenticatedHttpClientOptions options)
         {
             _options = options;
         }
 
-        public CustomHeaderAuthenticatedHttpMessageHandler(CustomHeaderAuthenticatedHttpClientOptions options, HttpMessageHandler innerHandler)
+        public CustomHeaderAuthenticatedHttpMessageHandler(
+            CustomHeaderAuthenticatedHttpClientOptions options,
+            HttpMessageHandler innerHandler) : this(options)
         {
             InnerHandler = innerHandler;
-            
-            _options = options;
         }
 
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        protected override async Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request, CancellationToken cancellationToken)
         {
             request.Headers.Remove(_options.Name);
             request.Headers.Add(_options.Name, _options.Value);
