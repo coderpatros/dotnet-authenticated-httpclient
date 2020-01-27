@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xunit;
 using RichardSzalay.MockHttp;
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
-namespace Patros.AuthenticatedHttpClient.AuthorizationHeader.Tests
+namespace CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.Tests
 {
     public class AuthorizationHeaderAuthenticatedHttpClientTests
     {

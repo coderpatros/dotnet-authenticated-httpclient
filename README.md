@@ -42,7 +42,7 @@ dotnet add package Patros.AuthenticatedHttpClient.AuthorizationHeader
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -64,7 +64,7 @@ dotnet add package Patros.AuthenticatedHttpClient.AzureAd
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -91,7 +91,7 @@ dotnet add package Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -113,7 +113,7 @@ dotnet add package Patros.AuthenticatedHttpClient.Basic
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -136,7 +136,7 @@ dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -154,7 +154,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Or if multiple custom headers are required...
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -182,7 +182,7 @@ dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -200,7 +200,7 @@ var content = await client.GetStringAsync("https://www.example.com");
 Or if multiple parameters are required...
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 
@@ -235,7 +235,7 @@ dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
 ```
 
 ```csharp
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
 ...
 

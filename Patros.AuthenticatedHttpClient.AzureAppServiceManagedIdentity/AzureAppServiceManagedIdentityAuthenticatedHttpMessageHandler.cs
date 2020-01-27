@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Services.AppAuthentication;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public class AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler : DelegatingHandler
     {

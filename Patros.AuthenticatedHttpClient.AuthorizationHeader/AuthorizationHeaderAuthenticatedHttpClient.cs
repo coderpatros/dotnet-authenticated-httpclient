@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public static class AuthorizationHeaderAuthenticatedHttpClient
     {

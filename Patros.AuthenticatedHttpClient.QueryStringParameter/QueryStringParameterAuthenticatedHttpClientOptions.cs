@@ -1,4 +1,4 @@
-﻿namespace Patros.AuthenticatedHttpClient
+﻿namespace CoderPatros.AuthenticatedHttpClient
 {
     public class QueryStringParameterAuthenticatedHttpClientOptions {
         public string Name { get; set; }

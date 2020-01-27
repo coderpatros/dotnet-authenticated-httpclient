@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xunit;
 using RichardSzalay.MockHttp;
 
-namespace Patros.AuthenticatedHttpClient.CustomHeader.Tests
+namespace CoderPatros.AuthenticatedHttpClient.CustomHeader.Tests
 {
     public class CustomHeaderAuthenticatedHttpClientTests
     {

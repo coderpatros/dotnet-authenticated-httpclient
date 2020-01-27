@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xunit;
 using RichardSzalay.MockHttp;
 
-namespace Patros.AuthenticatedHttpClient.QueryStringParameter.Tests
+namespace CoderPatros.AuthenticatedHttpClient.QueryStringParameter.Tests
 {
     public class QueryStringParameterAuthenticatedHttpClientTests
     {

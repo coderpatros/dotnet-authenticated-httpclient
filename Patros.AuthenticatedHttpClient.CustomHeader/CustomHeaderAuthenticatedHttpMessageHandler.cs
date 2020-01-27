@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public class CustomHeaderAuthenticatedHttpMessageHandler : DelegatingHandler
     {

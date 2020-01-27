@@ -10,9 +10,9 @@ using Newtonsoft.Json;
 using Xunit;
 using Moq;
 using RichardSzalay.MockHttp;
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
-namespace Patros.AuthenticatedHttpClient.AzureAd.Tests
+namespace CoderPatros.AuthenticatedHttpClient.AzureAd.Tests
 {
     public class AzureAdAuthenticatedHttpClientTests
     {

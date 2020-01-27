@@ -1,4 +1,4 @@
-﻿namespace Patros.AuthenticatedHttpClient
+﻿namespace CoderPatros.AuthenticatedHttpClient
 {
     public class BasicAuthenticatedHttpClientOptions {
         public string UserId { get; set; }

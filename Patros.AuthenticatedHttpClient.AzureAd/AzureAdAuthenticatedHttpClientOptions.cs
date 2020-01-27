@@ -1,4 +1,4 @@
-﻿namespace Patros.AuthenticatedHttpClient
+﻿namespace CoderPatros.AuthenticatedHttpClient
 {
     // implementation shamelessly ripped off from the Azure sample
     // https://github.com/Azure-Samples/active-directory-dotnet-daemon/blob/master/TodoListDaemon/Program.cs

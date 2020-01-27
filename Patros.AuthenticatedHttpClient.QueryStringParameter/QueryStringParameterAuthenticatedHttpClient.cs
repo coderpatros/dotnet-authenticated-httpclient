@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public static class QueryStringParameterAuthenticatedHttpClient
     {

@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public class BasicAuthenticatedHttpMessageHandler : DelegatingHandler
     {

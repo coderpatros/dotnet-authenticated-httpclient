@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Patros.AuthenticatedHttpClient
+namespace CoderPatros.AuthenticatedHttpClient
 {
     public class MultipleCustomHeaderAuthenticatedHttpClientOptions {
         public Dictionary<string, string> Headers { get; set; }

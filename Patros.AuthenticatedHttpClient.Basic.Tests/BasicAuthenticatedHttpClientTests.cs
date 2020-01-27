@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Xunit;
 using RichardSzalay.MockHttp;
 
-namespace Patros.AuthenticatedHttpClient.Basic.Tests
+namespace CoderPatros.AuthenticatedHttpClient.Basic.Tests
 {
     public class BasicAuthenticatedHttpClientTests
     {

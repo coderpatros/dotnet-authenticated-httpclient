@@ -9,9 +9,9 @@ using Newtonsoft.Json;
 using Xunit;
 using Moq;
 using RichardSzalay.MockHttp;
-using Patros.AuthenticatedHttpClient;
+using CoderPatros.AuthenticatedHttpClient;
 
-namespace Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests
+namespace CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests
 {
     public class AzureAppServiceManagedIdentityAuthenticatedHttpClientTests
     {
