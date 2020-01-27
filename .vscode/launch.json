@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Patros.AuthenticatedHttpClient.Basic.Tests/bin/Debug/netcoreapp2.1/Patros.AuthenticatedHttpClient.Basic.Tests.dll",
+            "program": "${workspaceFolder}/CoderPatros.AuthenticatedHttpClient.Basic.Tests/bin/Debug/netcoreapp2.1/CoderPatros.AuthenticatedHttpClient.Basic.Tests.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Patros.AuthenticatedHttpClient.Basic.Tests",
+            "cwd": "${workspaceFolder}/CoderPatros.AuthenticatedHttpClient.Basic.Tests",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
             "console": "internalConsole",
             "stopAtEntry": false,

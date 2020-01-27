@@ -3,27 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.Basic", "Patros.AuthenticatedHttpClient.Basic\Patros.AuthenticatedHttpClient.Basic.csproj", "{A3076F9F-44E1-4055-8175-52194029D52C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.Basic", "CoderPatros.AuthenticatedHttpClient.Basic\CoderPatros.AuthenticatedHttpClient.Basic.csproj", "{A3076F9F-44E1-4055-8175-52194029D52C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.Basic.Tests", "Patros.AuthenticatedHttpClient.Basic.Tests\Patros.AuthenticatedHttpClient.Basic.Tests.csproj", "{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.Basic.Tests", "CoderPatros.AuthenticatedHttpClient.Basic.Tests\CoderPatros.AuthenticatedHttpClient.Basic.Tests.csproj", "{A28EA4C3-02CE-4007-8CA3-9E602BA8D069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAd", "Patros.AuthenticatedHttpClient.AzureAd\Patros.AuthenticatedHttpClient.AzureAd.csproj", "{C5BD6A46-454C-41E1-B8F2-8029DD206E60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.AzureAd", "CoderPatros.AuthenticatedHttpClient.AzureAd\CoderPatros.AuthenticatedHttpClient.AzureAd.csproj", "{C5BD6A46-454C-41E1-B8F2-8029DD206E60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity", "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity\Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.csproj", "{D511EB62-3865-445B-8410-7915D6AF757E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity", "CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity\CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.csproj", "{D511EB62-3865-445B-8410-7915D6AF757E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAd.Tests", "Patros.AuthenticatedHttpClient.AzureAd.Tests\Patros.AuthenticatedHttpClient.AzureAd.Tests.csproj", "{FF9DAB22-C9AB-44B0-B0CF-FDD171721F90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.AzureAd.Tests", "CoderPatros.AuthenticatedHttpClient.AzureAd.Tests\CoderPatros.AuthenticatedHttpClient.AzureAd.Tests.csproj", "{FF9DAB22-C9AB-44B0-B0CF-FDD171721F90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests", "Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests\Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests.csproj", "{FE52A958-E16F-42B4-A648-FB8B7A2219B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests", "CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests\CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tests.csproj", "{FE52A958-E16F-42B4-A648-FB8B7A2219B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.QueryStringParameter", "Patros.AuthenticatedHttpClient.QueryStringParameter\Patros.AuthenticatedHttpClient.QueryStringParameter.csproj", "{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.QueryStringParameter", "CoderPatros.AuthenticatedHttpClient.QueryStringParameter\CoderPatros.AuthenticatedHttpClient.QueryStringParameter.csproj", "{A1210D99-ABB3-4886-89F4-D26A5AE5F6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.QueryStringParameter.Tests", "Patros.AuthenticatedHttpClient.QueryStringParameter.Tests\Patros.AuthenticatedHttpClient.QueryStringParameter.Tests.csproj", "{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.QueryStringParameter.Tests", "CoderPatros.AuthenticatedHttpClient.QueryStringParameter.Tests\CoderPatros.AuthenticatedHttpClient.QueryStringParameter.Tests.csproj", "{62771EE7-F5BB-456E-BBCB-75C8F3CD8CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.CustomHeader", "Patros.AuthenticatedHttpClient.CustomHeader\Patros.AuthenticatedHttpClient.CustomHeader.csproj", "{FBA45033-2937-4411-A0C9-49908D6B01CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.CustomHeader", "CoderPatros.AuthenticatedHttpClient.CustomHeader\CoderPatros.AuthenticatedHttpClient.CustomHeader.csproj", "{FBA45033-2937-4411-A0C9-49908D6B01CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.CustomHeader.Tests", "Patros.AuthenticatedHttpClient.CustomHeader.Tests\Patros.AuthenticatedHttpClient.CustomHeader.Tests.csproj", "{E76809D2-8E8D-4D07-8AB5-F0ED5C36A370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.CustomHeader.Tests", "CoderPatros.AuthenticatedHttpClient.CustomHeader.Tests\CoderPatros.AuthenticatedHttpClient.CustomHeader.Tests.csproj", "{E76809D2-8E8D-4D07-8AB5-F0ED5C36A370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patros.AuthenticatedHttpClient.AuthorizationHeader", "Patros.AuthenticatedHttpClient.AuthorizationHeader\Patros.AuthenticatedHttpClient.AuthorizationHeader.csproj", "{288D9318-E19E-4411-9C54-B09E236B9943}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderPatros.AuthenticatedHttpClient.AuthorizationHeader", "CoderPatros.AuthenticatedHttpClient.AuthorizationHeader\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.csproj", "{288D9318-E19E-4411-9C54-B09E236B9943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Patros.AuthenticatedHttpClient.AuthorizationHeader\Patros.AuthenticatedHttpClient.AuthorizationHeader.csproj" />
+    <ProjectReference Include="..\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.csproj" />
   </ItemGroup>
 
 

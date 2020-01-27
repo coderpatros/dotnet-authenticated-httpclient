@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Patros.AuthenticatedHttpClient.Basic.Tests/Patros.AuthenticatedHttpClient.Basic.Tests.csproj"
+                "${workspaceFolder}/CoderPatros.AuthenticatedHttpClient.Basic.Tests/CoderPatros.AuthenticatedHttpClient.Basic.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

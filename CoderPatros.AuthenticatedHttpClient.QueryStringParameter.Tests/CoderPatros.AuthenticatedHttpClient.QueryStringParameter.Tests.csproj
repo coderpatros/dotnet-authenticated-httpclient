@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Patros.AuthenticatedHttpClient.QueryStringParameter\Patros.AuthenticatedHttpClient.QueryStringParameter.csproj" />
+    <ProjectReference Include="..\CoderPatros.AuthenticatedHttpClient.QueryStringParameter\CoderPatros.AuthenticatedHttpClient.QueryStringParameter.csproj" />
   </ItemGroup>
 
 

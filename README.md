@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/coderpatros/OpenSource/_apis/build/status/Patros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/coderpatros/OpenSource/_build/latest?definitionId=15&branchName=master)
+[![Build Status](https://dev.azure.com/coderpatros/OpenSource/_apis/build/status/CoderPatros.AuthenticatedHttpClient?branchName=master)](https://dev.azure.com/coderpatros/OpenSource/_build/latest?definitionId=15&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/coderpatros/OpenSource/15.svg)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/coderpatros/OpenSource/15.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/coderpatros/dotnet-authenticated-httpclient/badge)](https://www.codefactor.io/repository/github/coderpatros/dotnet-authenticated-httpclient)
@@ -15,30 +15,30 @@ handle authentication for you.
 They all return HttpClient instances so your favourite extension methods will
 work too.
 
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AuthorizationHeader.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AuthorizationHeader/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.AuthorizationHeader.svg)
-`Patros.AuthenticatedHttpClient.AuthorizationHeader`  
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAd.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAd/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.AzureAd.svg)
-`Patros.AuthenticatedHttpClient.AzureAd`  
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg)
-`Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity`  
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.Basic/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.Basic.svg)
-`Patros.AuthenticatedHttpClient.Basic`  
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.CustomHeader.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.CustomHeader/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.CustomHeader.svg)
-`Patros.AuthenticatedHttpClient.CustomHeader`  
-[![NuGet](https://img.shields.io/nuget/v/Patros.AuthenticatedHttpClient.QueryStringParameter.svg?style=flat-square)](https://www.nuget.org/packages/Patros.AuthenticatedHttpClient.QueryStringParameter/)
-![Nuget](https://img.shields.io/nuget/dt/Patros.AuthenticatedHttpClient.QueryStringParameter.svg)
-`Patros.AuthenticatedHttpClient.QueryStringParameter`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.AuthorizationHeader/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.svg)
+`CoderPatros.AuthenticatedHttpClient.AuthorizationHeader`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.AzureAd.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.AzureAd/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.AzureAd.svg)
+`CoderPatros.AuthenticatedHttpClient.AzureAd`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.svg)
+`CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.Basic.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.Basic/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.Basic.svg)
+`CoderPatros.AuthenticatedHttpClient.Basic`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.CustomHeader.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.CustomHeader/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.CustomHeader.svg)
+`CoderPatros.AuthenticatedHttpClient.CustomHeader`  
+[![NuGet](https://img.shields.io/nuget/v/CoderPatros.AuthenticatedHttpClient.QueryStringParameter.svg?style=flat-square)](https://www.nuget.org/packages/CoderPatros.AuthenticatedHttpClient.QueryStringParameter/)
+![Nuget](https://img.shields.io/nuget/dt/CoderPatros.AuthenticatedHttpClient.QueryStringParameter.svg)
+`CoderPatros.AuthenticatedHttpClient.QueryStringParameter`  
 
 Authorization Header Authenticated Http Client Example Usage
 ------------------------------------------------------------
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.AuthorizationHeader
+dotnet add package CoderPatros.AuthenticatedHttpClient.AuthorizationHeader
 ```
 
 ```csharp
@@ -60,7 +60,7 @@ Azure AD Authenticated Http Client Example Usage
 ------------------------------------------------
 
 ```
-dotnet add package Patros.AuthenticatedHttpClient.AzureAd
+dotnet add package CoderPatros.AuthenticatedHttpClient.AzureAd
 ```
 
 ```csharp
@@ -87,7 +87,7 @@ Azure App Service Managed Identity Authenticated Http Client Example Usage
 --------------------------------------------------------------------------
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity
+dotnet add package CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity
 ```
 
 ```csharp
@@ -109,7 +109,7 @@ Basic Authenticated Http Client Example Usage
 ---------------------------------------------
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.Basic
+dotnet add package CoderPatros.AuthenticatedHttpClient.Basic
 ```
 
 ```csharp
@@ -132,7 +132,7 @@ Custom Header Authenticated Http Client Example Usage
 -----------------------------------------------------
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
+dotnet add package CoderPatros.AuthenticatedHttpClient.CustomHeader
 ```
 
 ```csharp
@@ -178,7 +178,7 @@ Query String Parameter Authenticated Http Client Example Usage
 --------------------------------------------------------------
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
+dotnet add package CoderPatros.AuthenticatedHttpClient.QueryStringParameter
 ```
 
 ```csharp
@@ -229,9 +229,9 @@ requires basic authentication, a query string parameter and a custom HTTP
 header. I know, that would never happen in the real world... oh wait... there's the [Whispir API](https://whispir.github.io/api/).
 
 ```shell
-dotnet add package Patros.AuthenticatedHttpClient.Basic
-dotnet add package Patros.AuthenticatedHttpClient.CustomHeader
-dotnet add package Patros.AuthenticatedHttpClient.QueryStringParameter
+dotnet add package CoderPatros.AuthenticatedHttpClient.Basic
+dotnet add package CoderPatros.AuthenticatedHttpClient.CustomHeader
+dotnet add package CoderPatros.AuthenticatedHttpClient.QueryStringParameter
 ```
 
 ```csharp

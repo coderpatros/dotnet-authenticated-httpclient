@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Product>Patros.AuthenticatedHttpClient.CustomHeader</Product>
+    <Product>CoderPatros.AuthenticatedHttpClient.CustomHeader</Product>
     <Authors>Patrick T Dwyer</Authors>
     <Company></Company>
     <Description>This package implements a HttpClient with custom HTTP header authentication.</Description>

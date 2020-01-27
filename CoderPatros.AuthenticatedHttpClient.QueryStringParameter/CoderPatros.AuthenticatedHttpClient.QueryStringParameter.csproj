@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Product>Patros.AuthenticatedHttpClient.AuthorizationHeader</Product>
+    <Product>CoderPatros.AuthenticatedHttpClient.QueryStringParameter</Product>
     <Authors>Patrick T Dwyer</Authors>
     <Company></Company>
-    <Description>This package implements a HttpClient with authorization header authentication.</Description>
+    <Description>This package implements a HttpClient with query string parameter authentication.</Description>
     <PackageProjectUrl>https://github.com/patros/dotnet-authenticated-httpclient</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/patros/dotnet-authenticated-httpclient/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
