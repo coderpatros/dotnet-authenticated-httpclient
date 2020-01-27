@@ -6,10 +6,10 @@
     <Authors>Patrick T Dwyer</Authors>
     <Company></Company>
     <Description>This package implements a HttpClient with HTTP basic access authentication.</Description>
-    <PackageProjectUrl>https://github.com/patros/dotnet-authenticated-httpclient</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/patros/dotnet-authenticated-httpclient/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/coderpatros/dotnet-authenticated-httpclient</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/patros/dotnet-authenticated-httpclient.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/coderpatros/dotnet-authenticated-httpclient.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
