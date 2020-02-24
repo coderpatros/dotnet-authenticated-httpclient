@@ -29,20 +29,22 @@ namespace CoderPatros.AuthenticatedHttpClient.Basic.Tests
         [Fact]
         public async Task TestRequestHasAuthorizationHeader()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
-                .Respond(HttpStatusCode.OK);
-            var client = BasicAuthenticatedHttpClient.GetClient(new BasicAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                UserId = "Aladdin",
-                Password = "open sesame"
-            }, mockHttp);
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
+                    .Respond(HttpStatusCode.OK);
+                var client = BasicAuthenticatedHttpClient.GetClient(new BasicAuthenticatedHttpClientOptions
+                {
+                    UserId = "Aladdin",
+                    Password = "open sesame"
+                }, mockHttp);
 
-            await client.GetStringAsync("https://www.example.com");
+                await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                mockHttp.VerifyNoOutstandingExpectation();
+            }
         }
     }
 }

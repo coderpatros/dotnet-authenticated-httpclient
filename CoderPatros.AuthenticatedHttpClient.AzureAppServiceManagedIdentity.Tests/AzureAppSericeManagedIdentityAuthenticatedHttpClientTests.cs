@@ -18,24 +18,28 @@ namespace CoderPatros.AuthenticatedHttpClient.AzureAppServiceManagedIdentity.Tes
         [Fact]
         public async Task TestRequestHasAuthorizationHeader()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders("Authorization", "Bearer test-access-token")
-                .Respond(HttpStatusCode.OK);
-            var mockMsgHandler = new Mock<AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler>(new AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                ResourceId = "test-resource-id"
-            }, mockHttp);
-            mockMsgHandler
-                .Setup(handler => handler.GetAccessTokenAsync())
-                .Returns(Task.FromResult("test-access-token"));
-            mockMsgHandler.CallBase = true;
-            var client = new HttpClient(mockMsgHandler.Object);
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders("Authorization", "Bearer test-access-token")
+                    .Respond(HttpStatusCode.OK);
+                var mockMsgHandler = new Mock<AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler>(new AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions
+                {
+                    ResourceId = "test-resource-id"
+                }, mockHttp);
+                mockMsgHandler
+                    .Setup(handler => handler.GetAccessTokenAsync())
+                    .Returns(Task.FromResult("test-access-token"));
+                mockMsgHandler.CallBase = true;
 
-            await client.GetStringAsync("https://www.example.com");
+                using (var client = new HttpClient(mockMsgHandler.Object))
+                {
+                    await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                    mockHttp.VerifyNoOutstandingExpectation();
+                }
+            }
         }
     }
 }

@@ -12,68 +12,74 @@ namespace CoderPatros.AuthenticatedHttpClient.CustomHeader.Tests
         [Fact]
         public async Task TestRequestAddsAuthenticationHeader()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders("test-name", "test-value")
-                .Respond(HttpStatusCode.OK);
-            var client = CustomHeaderAuthenticatedHttpClient.GetClient(new CustomHeaderAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Name = "test-name",
-                Value = "test-value"
-            }, mockHttp);
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders("test-name", "test-value")
+                    .Respond(HttpStatusCode.OK);
+                var client = CustomHeaderAuthenticatedHttpClient.GetClient(new CustomHeaderAuthenticatedHttpClientOptions
+                {
+                    Name = "test-name",
+                    Value = "test-value"
+                }, mockHttp);
 
-            await client.GetStringAsync("https://www.example.com");
+                await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                mockHttp.VerifyNoOutstandingExpectation();
+            }
         }
 
         [Fact]
         public async Task TestMultipleParameterRequestAddsAuthenticationParameters()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders(new Dictionary<string, string> {
-                    { "test-name-1", "test-value-1" },
-                    { "test-name-2", "test-value-2" }
-                })
-                .Respond(HttpStatusCode.OK);
-            var client = CustomHeaderAuthenticatedHttpClient.GetClient(new MultipleCustomHeaderAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Headers = new Dictionary<string, string>
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders(new Dictionary<string, string> {
+                        { "test-name-1", "test-value-1" },
+                        { "test-name-2", "test-value-2" }
+                    })
+                    .Respond(HttpStatusCode.OK);
+                var client = CustomHeaderAuthenticatedHttpClient.GetClient(new MultipleCustomHeaderAuthenticatedHttpClientOptions
                 {
-                    { "test-name-1", "test-value-1"},
-                    { "test-name-2", "test-value-2"}
-                }
-            }, mockHttp);
+                    Headers = new Dictionary<string, string>
+                    {
+                        { "test-name-1", "test-value-1"},
+                        { "test-name-2", "test-value-2"}
+                    }
+                }, mockHttp);
 
-            await client.GetStringAsync("https://www.example.com");
+                await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                mockHttp.VerifyNoOutstandingExpectation();
+            }
         }
 
         [Fact]
         public async Task TestMultipleParameterWithSingleParameterRequestAddsAuthenticationParameter()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders(new Dictionary<string, string> {
-                    { "test-name-1", "test-value-1" }
-                })
-                .Respond(HttpStatusCode.OK);
-            var client = CustomHeaderAuthenticatedHttpClient.GetClient(new MultipleCustomHeaderAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Headers = new Dictionary<string, string>
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders(new Dictionary<string, string> {
+                        { "test-name-1", "test-value-1" }
+                    })
+                    .Respond(HttpStatusCode.OK);
+                var client = CustomHeaderAuthenticatedHttpClient.GetClient(new MultipleCustomHeaderAuthenticatedHttpClientOptions
                 {
-                    { "test-name-1", "test-value-1"}
-                }
-            }, mockHttp);
+                    Headers = new Dictionary<string, string>
+                    {
+                        { "test-name-1", "test-value-1"}
+                    }
+                }, mockHttp);
 
-            await client.GetStringAsync("https://www.example.com");
+                await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                mockHttp.VerifyNoOutstandingExpectation();
+            }
         }
     }
 }

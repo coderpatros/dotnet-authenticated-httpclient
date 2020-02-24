@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Contracts;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Globalization;
@@ -18,6 +19,8 @@ namespace CoderPatros.AuthenticatedHttpClient
 
         public AzureAdAuthenticatedHttpMessageHandler(AzureAdAuthenticatedHttpClientOptions options)
         {
+            Contract.Requires(options != null);
+
             _resourceId = options.ResourceId;
 
             var authority = String.Format(CultureInfo.InvariantCulture, options.AadInstance, options.Tenant);
@@ -35,7 +38,7 @@ namespace CoderPatros.AuthenticatedHttpClient
 
         internal virtual async Task<string> AcquireAccessTokenAsync()
         {
-            var result = await _authContext.AcquireTokenAsync(_resourceId, _clientCredential);
+            var result = await _authContext.AcquireTokenAsync(_resourceId, _clientCredential).ConfigureAwait(false);
             return result?.AccessToken;
         }
 
@@ -55,7 +58,7 @@ namespace CoderPatros.AuthenticatedHttpClient
                 try
                 {
                     // ADAL includes an in memory cache, so this call will only send a message to the server if the cached token is expired.
-                    token = await AcquireAccessTokenAsync();
+                    token = await AcquireAccessTokenAsync().ConfigureAwait(false);
                 }
                 catch (AdalException ex)
                 {
@@ -80,7 +83,9 @@ namespace CoderPatros.AuthenticatedHttpClient
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var accessToken = await AcquireTokenWithRetriesAsync(cancellationToken);
+            Contract.Requires(request != null);
+
+            var accessToken = await AcquireTokenWithRetriesAsync(cancellationToken).ConfigureAwait(false);
             if (cancellationToken.IsCancellationRequested)
             {
                 return null;
@@ -90,7 +95,7 @@ namespace CoderPatros.AuthenticatedHttpClient
                 "Bearer",
                 accessToken);
             
-            return await base.SendAsync(request, cancellationToken);
+            return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
     }
 }
