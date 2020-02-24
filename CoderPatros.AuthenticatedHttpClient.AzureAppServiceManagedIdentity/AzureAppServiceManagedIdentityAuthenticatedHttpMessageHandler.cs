@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Diagnostics.Contracts;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,6 +17,8 @@ namespace CoderPatros.AuthenticatedHttpClient
         public AzureAppServiceManagedIdentityAuthenticatedHttpMessageHandler(
             AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options)
         {
+            Contract.Requires(options != null);
+
             _resourceId = options.ResourceId;
         }
 
@@ -22,24 +26,28 @@ namespace CoderPatros.AuthenticatedHttpClient
             AzureAppServiceManagedIdentityAuthenticatedHttpClientOptions options, 
             HttpMessageHandler innerHandler) : this(options)
         {
+            Contract.Requires(options != null);
+
             InnerHandler = innerHandler;
         }
 
         [ExcludeFromCodeCoverage]
         internal virtual async Task<string> GetAccessTokenAsync()
         {
-            return await _azureServiceTokenProvider.GetAccessTokenAsync(_resourceId);
+            return await _azureServiceTokenProvider.GetAccessTokenAsync(_resourceId).ConfigureAwait(false);
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var accessToken = await GetAccessTokenAsync();
+            Contract.Requires(request != null);
+
+            var accessToken = await GetAccessTokenAsync().ConfigureAwait(false);
 
             request.Headers.Authorization = new AuthenticationHeaderValue(
                 "Bearer",
                 accessToken);
             
-            return await base.SendAsync(request, cancellationToken);
+            return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
     }
 }

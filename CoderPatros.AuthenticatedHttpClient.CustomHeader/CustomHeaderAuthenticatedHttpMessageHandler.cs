@@ -26,7 +26,7 @@ namespace CoderPatros.AuthenticatedHttpClient
         {
             request.Headers.Remove(_options.Name);
             request.Headers.Add(_options.Name, _options.Value);
-            return await base.SendAsync(request, cancellationToken);
+            return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -19,80 +19,94 @@ namespace CoderPatros.AuthenticatedHttpClient.AzureAd.Tests
         [Fact]
         public async Task TestRequestHasAuthorizationHeader()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders("Authorization", "Bearer test-access-token")
-                .Respond(HttpStatusCode.OK);
-            var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Tenant = "test-tenant",
-                ClientId = "test-client-id",
-                AppKey = "test-client-app-key",
-                ResourceId = "test-resource-id"
-            }, mockHttp);
-            mockMsgHandler
-                .Setup(handler => handler.AcquireAccessTokenAsync())
-                .Returns(Task.FromResult("test-access-token"));
-            mockMsgHandler.CallBase = true;
-            var client = new HttpClient(mockMsgHandler.Object);
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders("Authorization", "Bearer test-access-token")
+                    .Respond(HttpStatusCode.OK);
+                var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+                {
+                    Tenant = "test-tenant",
+                    ClientId = "test-client-id",
+                    AppKey = "test-client-app-key",
+                    ResourceId = "test-resource-id"
+                }, mockHttp);
+                mockMsgHandler
+                    .Setup(handler => handler.AcquireAccessTokenAsync())
+                    .Returns(Task.FromResult("test-access-token"));
+                mockMsgHandler.CallBase = true;
 
-            await client.GetStringAsync("https://www.example.com");
+                using (var client = new HttpClient(mockMsgHandler.Object))
+                {
+                    await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
+                    mockHttp.VerifyNoOutstandingExpectation();
+                }
+            }
         }
 
         [Fact]
         public async Task TestRequestRetriesThreeTimesToAcquireAccessToken()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp
-                .Expect("https://www.example.com")
-                .WithHeaders("Authorization", "Bearer test-access-token")
-                .Respond(HttpStatusCode.OK);
-            var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Tenant = "test-tenant",
-                ClientId = "test-client-id",
-                AppKey = "test-client-app-key",
-                ResourceId = "test-resource-id"
-            }, mockHttp);
-            mockMsgHandler
-                .SetupSequence(handler => handler.AcquireAccessTokenAsync())
-                .Throws(new AdalException("temporarily_unavailable"))
-                .Throws(new AdalException("temporarily_unavailable"))
-                .Returns(Task.FromResult("test-access-token"));
-            mockMsgHandler.CallBase = true;
-            var client = new HttpClient(mockMsgHandler.Object);
+                mockHttp
+                    .Expect("https://www.example.com")
+                    .WithHeaders("Authorization", "Bearer test-access-token")
+                    .Respond(HttpStatusCode.OK);
+                var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+                {
+                    Tenant = "test-tenant",
+                    ClientId = "test-client-id",
+                    AppKey = "test-client-app-key",
+                    ResourceId = "test-resource-id"
+                }, mockHttp);
+                mockMsgHandler
+                    .SetupSequence(handler => handler.AcquireAccessTokenAsync())
+                    .Throws(new AdalException("temporarily_unavailable"))
+                    .Throws(new AdalException("temporarily_unavailable"))
+                    .Returns(Task.FromResult("test-access-token"));
+                mockMsgHandler.CallBase = true;
 
-            await client.GetStringAsync("https://www.example.com");
+                using (var client = new HttpClient(mockMsgHandler.Object))
+                {
+                    await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false);
 
-            mockHttp.VerifyNoOutstandingExpectation();
-        }    
+                    mockHttp.VerifyNoOutstandingExpectation();
+                }
+            }
+        }
 
         [Fact]
         public async Task TestRequestFailsOnRepeatedFailuresToAcquireAccessTokenFailure()
         {
-            var mockHttp = new MockHttpMessageHandler();
-            mockHttp.Fallback.Respond(req => new HttpResponseMessage(HttpStatusCode.Unauthorized));
-            var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+            using (var mockHttp = new MockHttpMessageHandler())
             {
-                Tenant = "test-tenant",
-                ClientId = "test-client-id",
-                AppKey = "test-client-app-key",
-                ResourceId = "test-resource-id"
-            }, mockHttp);
-            mockMsgHandler
-                .SetupSequence(handler => handler.AcquireAccessTokenAsync())
-                .Throws(new AdalException("temporarily_unavailable"))
-                .Throws(new AdalException("temporarily_unavailable"))
-                .Throws(new AdalException("temporarily_unavailable"));
-            mockMsgHandler.CallBase = true;
-            var client = new HttpClient(mockMsgHandler.Object);
+                mockHttp.Fallback.Respond(req => new HttpResponseMessage(HttpStatusCode.Unauthorized));
+                var mockMsgHandler = new Mock<AzureAdAuthenticatedHttpMessageHandler>(new AzureAdAuthenticatedHttpClientOptions
+                {
+                    Tenant = "test-tenant",
+                    ClientId = "test-client-id",
+                    AppKey = "test-client-app-key",
+                    ResourceId = "test-resource-id"
+                }, mockHttp);
+                mockMsgHandler
+                    .SetupSequence(handler => handler.AcquireAccessTokenAsync())
+                    .Throws(new AdalException("temporarily_unavailable"))
+                    .Throws(new AdalException("temporarily_unavailable"))
+                    .Throws(new AdalException("temporarily_unavailable"));
+                mockMsgHandler.CallBase = true;
 
-            var exc = await Record.ExceptionAsync(async () => await client.GetStringAsync("https://www.example.com"));
+                using (var client = new HttpClient(mockMsgHandler.Object))
+                {
+                    var exc = await Record.ExceptionAsync(
+                        async () => await client.GetStringAsync(new Uri("https://www.example.com")).ConfigureAwait(false)
+                    ).ConfigureAwait(false);
 
-            Assert.IsType<HttpRequestException>(exc);
-        }    
+                    Assert.IsType<HttpRequestException>(exc);
+                }
+            }
+        }
     }
 }
