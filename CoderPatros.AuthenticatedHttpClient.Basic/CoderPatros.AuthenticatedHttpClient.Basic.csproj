@@ -10,6 +10,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/coderpatros/dotnet-authenticated-httpclient.git</RepositoryUrl>
+    <PackageVersion>$(VersionSuffix)</PackageVersion>
   </PropertyGroup>
 
 </Project>
