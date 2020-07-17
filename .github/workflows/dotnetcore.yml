@@ -23,3 +23,9 @@ jobs:
       run: dotnet build -warnaserror
     - name: Tests
       run: dotnet test
+
+    - name: Generate XML SBOM
+      uses: CycloneDX/gh-dotnet-generate-sbom@master
+      with:
+        path: 'CoderPatros.AuthenticatedHttpClient.sln'
+        githubBearerToken: ${{ secrets.GITHUB_TOKEN }}
