@@ -29,7 +29,12 @@ jobs:
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.AuthorizationHeader.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.AzureAd.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.AzureAppServiceManagedIdentity.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.Basic.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.CustomHeader.${{ steps.package_release.outputs.version }}.nupkg
+          dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" *.QueryStringParameter.${{ steps.package_release.outputs.version }}.nupkg
 
       - name: Create github release
         id: create_release
