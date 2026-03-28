@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoderPatros.AuthenticatedHttpClient.QueryStringParameter\CoderPatros.AuthenticatedHttpClient.QueryStringParameter.csproj" />
+    <ProjectReference Include="..\..\src\CoderPatros.AuthenticatedHttpClient.CustomHeader\CoderPatros.AuthenticatedHttpClient.CustomHeader.csproj" />
   </ItemGroup>
 
 

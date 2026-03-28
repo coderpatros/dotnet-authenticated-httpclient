@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoderPatros.AuthenticatedHttpClient.Basic\CoderPatros.AuthenticatedHttpClient.Basic.csproj" />
+    <ProjectReference Include="..\..\src\CoderPatros.AuthenticatedHttpClient.Basic\CoderPatros.AuthenticatedHttpClient.Basic.csproj" />
   </ItemGroup>
 
 </Project>
