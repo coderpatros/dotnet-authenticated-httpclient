@@ -33,5 +33,5 @@ jobs:
     - name: Upload SBOM artifact
       uses: actions/upload-artifact@v4
       with:
-        name: actions-sbom
+        name: actions-sbom-${{ matrix.os }}
         path: ${{ steps.sbom.outputs.sbom-path }}
