@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.csproj" />
+    <ProjectReference Include="..\..\src\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader\CoderPatros.AuthenticatedHttpClient.AuthorizationHeader.csproj" />
   </ItemGroup>
 
 

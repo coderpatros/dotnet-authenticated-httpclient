@@ -8,18 +8,30 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest]
     timeout-minutes: 30
 
     steps:
     - uses: actions/checkout@v1
 
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET 10
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
+        dotnet-version: 10.0.x
 
     - name: Build
       run: dotnet build -warnaserror
     - name: Tests
       run: dotnet test
+
+    - name: Generate Actions SBOM
+      id: sbom
+      uses: coderpatros/action-sbom@v1
+      with:
+        output-file: actions-sbom.json
+
+    - name: Upload SBOM artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: actions-sbom-${{ matrix.os }}
+        path: ${{ steps.sbom.outputs.sbom-path }}
