@@ -106,3 +106,15 @@ jobs:
           asset_path: CoderPatros.AuthenticatedHttpClient.QueryStringParameter.${{ steps.package_release.outputs.version }}.nupkg
           asset_name: CoderPatros.AuthenticatedHttpClient.QueryStringParameter.${{ steps.package_release.outputs.version }}.nupkg
           asset_content_type: application/zip
+
+      - name: Generate Actions SBOM
+        id: sbom
+        uses: coderpatros/action-sbom@v1
+        with:
+          output-file: actions-sbom.json
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: actions-sbom
+          path: ${{ steps.sbom.outputs.sbom-path }}

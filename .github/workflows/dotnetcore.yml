@@ -23,3 +23,15 @@ jobs:
       run: dotnet build -warnaserror
     - name: Tests
       run: dotnet test
+
+    - name: Generate Actions SBOM
+      id: sbom
+      uses: coderpatros/action-sbom@v1
+      with:
+        output-file: actions-sbom.json
+
+    - name: Upload SBOM artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: actions-sbom
+        path: ${{ steps.sbom.outputs.sbom-path }}
